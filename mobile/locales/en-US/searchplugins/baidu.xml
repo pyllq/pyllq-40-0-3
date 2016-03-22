@@ -1,0 +1,18 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/">
+<ShortName>Baidu</ShortName>
+<InputEncoding>UTF-8</InputEncoding>
+<Image width="16" height="16">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB98FDgE6JWjsnBAAAAPySURBVFjDxZd9SFtXFMB/7yXRmGltrWSxnUo760fHhug2QVxlUIT+sQ86OrbSfTg6cV1t161kLbYiHUWQydiEsXWMjZXRWtrNtn8MRCiOILNBkcFaLd1AW2cSEz+z+OLzveyPaDB9SUxqqOe/e+695/zeeeece69QUjZSDbQCz/No5SZgFUrKRsYBC+sjDv2y8x++MVPxnPGReO2zS9TWuwAs4rIyHucXL3vZVTNGzcv/0tsnaebnvCpd3T5mZtWYdlb60idCfaZlMjT+4OgEXde28LhZB8DQ8AJ1DRO4PQomk8C5djNlpamr2hXjBfjpwlzYWJYDXLwc1Pl8AT782I3bo4TGn5x04/MFkgdw6/aCRjc0LANw5aqXccdi2JzTpdBjm08egMEgaDcHo88fdininjmvmjyAHQUGja5wSRcJDqD0mYfMgZ875thVM8be/Q66b/gAeH1vetganQivvRLUlRSmaGxUV6WFABMC6LNLnG2dwu1RGBpe4MhxNz22eaqr0jjWsBGTSSBrk0hbSzZPbA0W0Rv70nlyuyEsMs2NWXFFVigpGwkA3OrPC5XXg8lTWGCgsyMnpiFFBVvvPMZUgWfLjchygBNNHmy982Ski7z60mMcPbQxtH5n+WjkPmAf0CbUnbsykj+AMVWICqATg2Ffltb2abq6fUtlqfDt97NkpIu89/aG2L9AllcP28Cgn/21TnaWj1K1+z6NzZ5QD1iWG79rS/D8A70kIkBxoTZxciz60Nf32OaprXcx+KcfgMkplV+v/8e+A44wCKdL0dhxuhRNc9IAvF+7QbPx3QMZAIzeW8Ta6EGWAxGNf2R1h+Z0UQrcZBJiA+x+0URbSzaVFUbKSlP57HQWb72ZgeQPcOT4RMzmMjDo5/MvpwEwL50RK2Vbvja6EQ+jPTUm9tSYwjL8RJOHO3dXT5DzF+YoLkrhcH0mJ097UFbwHq7PXL0MtUkZLKffunxxn/c6EVrPZpOXq8fe78frVal+IY2nn0pZvQxXyuSUyrFPJ7D3+xO6cCgqWBvdnGnaHMqfhM8Cny/AO3XOhJ2vhGhs9vDdj7MPB9DSNsXf/8isVb5on+bSL97EAMYdi3Re8ybtDvjV19NI/kD8AH/dXgjL3rXK5JQa8UITFUAnCkm/CScUgeIiQ9IBtuXr4wfIseipqkzeG6G4KIUciz6xKjhlzSJ7s27NznUinLJuijoftRHl5erp7MjhylUvfTclZmZVzGYdWyx6dhQYyM/VYzbrkGWYmVHps0vYByScLoXRe4sYDAKVFUYO1WWGdcCorfhcuzmpYY8ltl6JugZXCOA+sHWdHqdjInAQcKzHyxg4+D9zYYDKxnN3AAAAAABJRU5ErkJggg==</Image>
+<SearchForm>http://www.baidu.com/</SearchForm>
+<Url type="text/html" method="GET" template="http://www.baidu.com/s?wd={searchTerms}&amp;ie=UTF-8">
+</Url>
+<Url type="application/x-suggestions+json" method="GET" template="http://suggestion.baidu.com/su">
+  <Param name="wd" value="{searchTerms}"/>
+  <Param name="action" value="opensearch"/>
+  <Param name="ie" value="UTF-8"/>
+  <Param name="from" value="firefox"/>
+</Url>
+</SearchPlugin>

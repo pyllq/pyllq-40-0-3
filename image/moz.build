@@ -1,0 +1,38 @@
+# -*- Mode: python; c-basic-offset: 4; indent-tabs-mode: nil; tab-width: 40 -*-
+# vim: set filetype=python:
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+DIRS += ['build', 'src', 'decoders', 'encoders']
+
+with Files('**'):
+    BUG_COMPONENT = ('Core', 'ImageLib')
+
+BROWSER_CHROME_MANIFESTS += ['test/browser/browser.ini']
+
+MOCHITEST_MANIFESTS += ['test/mochitest/mochitest.ini']
+
+MOCHITEST_CHROME_MANIFESTS += ['test/mochitest/chrome.ini']
+
+XPCSHELL_TESTS_MANIFESTS += ['test/unit/xpcshell.ini']
+
+XPIDL_SOURCES += [
+    'imgICache.idl',
+    'imgIContainer.idl',
+    'imgIContainerDebug.idl',
+    'imgIEncoder.idl',
+    'imgILoader.idl',
+    'imgINotificationObserver.idl',
+    'imgIOnloadBlocker.idl',
+    'imgIRequest.idl',
+    'imgIScriptedNotificationObserver.idl',
+    'imgITools.idl',
+    'nsIIconURI.idl',
+]
+
+XPIDL_MODULE = 'imglib2'
+
+EXPORTS += [
+    'ImageLogging.h',
+]
