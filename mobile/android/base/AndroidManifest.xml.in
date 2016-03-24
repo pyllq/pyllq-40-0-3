@@ -15,9 +15,11 @@
 #endif
               android:targetSdkVersion="@ANDROID_TARGET_SDK@"/>
 
+#ifdef MOZ_MOZ_BUILD_ORIG
 #include ../services/manifests/FxAccountAndroidManifest_permissions.xml.in
-#include ../services/manifests/HealthReportAndroidManifest_permissions.xml.in
 #include ../services/manifests/SyncAndroidManifest_permissions.xml.in
+#endif
+#include ../services/manifests/HealthReportAndroidManifest_permissions.xml.in
 
 #ifdef MOZ_ANDROID_SEARCH_ACTIVITY
 #include ../search/manifests/SearchAndroidManifest_permissions.xml.in
@@ -378,9 +380,12 @@
                   android:process="@MANGLED_ANDROID_PACKAGE_NAME@.Restarter">
         </service>
 
+#ifdef MOZ_MOZ_BUILD_ORIG
 #include ../services/manifests/FxAccountAndroidManifest_activities.xml.in
-#include ../services/manifests/HealthReportAndroidManifest_activities.xml.in
 #include ../services/manifests/SyncAndroidManifest_activities.xml.in
+#endif
+#include ../services/manifests/HealthReportAndroidManifest_activities.xml.in
+
 #ifdef MOZ_ANDROID_SEARCH_ACTIVITY
 #include ../search/manifests/SearchAndroidManifest_activities.xml.in
 #endif
@@ -483,9 +488,12 @@
         </service>
 
 
+#ifdef MOZ_MOZ_BUILD_ORIG
 #include ../services/manifests/FxAccountAndroidManifest_services.xml.in
-#include ../services/manifests/HealthReportAndroidManifest_services.xml.in
 #include ../services/manifests/SyncAndroidManifest_services.xml.in
+#endif
+#include ../services/manifests/HealthReportAndroidManifest_services.xml.in
+
 #ifdef MOZ_ANDROID_SEARCH_ACTIVITY
 #include ../search/manifests/SearchAndroidManifest_services.xml.in
 #endif

@@ -63,6 +63,8 @@ public class SyncAccounts {
    * Do not call this method from the main thread.
    */
   public static boolean syncAccountsExist(Context c) {
+    return false;
+    /*
     final boolean accountsExist = AccountManager.get(c).getAccountsByType(SyncConstants.ACCOUNTTYPE_SYNC).length > 0;
     if (accountsExist) {
       return true;
@@ -78,6 +80,7 @@ public class SyncAccounts {
     // exist.
     final Account account = AccountPickler.unpickle(c, Constants.ACCOUNT_PICKLE_FILENAME);
     return (account != null);
+    */
   }
 
   /**
