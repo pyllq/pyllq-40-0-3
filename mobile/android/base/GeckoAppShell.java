@@ -116,6 +116,8 @@ import android.webkit.URLUtil;
 import android.widget.AbsoluteLayout;
 import android.widget.Toast;
 
+import com.brainiii.util.BrainiiiApp;
+
 public class GeckoAppShell
 {
     private static final String LOGTAG = "GeckoAppShell";
@@ -1074,8 +1076,14 @@ public class GeckoAppShell
             i.setAction("com.chinesebrowser.SHOW_DICT");
             i.putExtra(Intent.EXTRA_TEXT, text);
             getContext().startActivity(i);
-        } catch (Exception e) {
-            Toast.makeText(getContext(), e.toString(), Toast.LENGTH_LONG).show();
+        } catch (Exception exc) {
+            //Toast.makeText(getContext(), e.toString(), Toast.LENGTH_LONG).show();
+
+            String url = String.format("http://cidian.brainiii.com/#qry[src]=%s&qry[srt]=scoreHits&qry[psz]=20&qry[sfx]=best&qry[fil]=0",
+                text);
+            Tabs.getInstance().loadUrlInTab(url);
+
+            //BrainiiiApp.triggerPinyinCidianAppInstall(GeckoApp.mAppContext);
         }
     }
 

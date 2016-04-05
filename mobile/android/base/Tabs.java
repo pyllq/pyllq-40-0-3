@@ -839,7 +839,7 @@ public class Tabs implements GeckoEventListener {
      *
      * @return             the Tab if a new one was created; null otherwise
      */
-    public Tab loadUrl(final String url, final String searchEngine, final int parentId,
+    public Tab loadUrl(final String url, final String searchEngine, int parentId,
                    final SafeIntent intent, final int flags) {
         JSONObject args = new JSONObject();
         Tab tabToSelect = null;
@@ -847,6 +847,14 @@ public class Tabs implements GeckoEventListener {
 
         // delayLoad implies background tab
         boolean background = delayLoad || (flags & LOADURL_BACKGROUND) != 0;
+
+        // always try to tie back to a parent tab
+        if (parentId == -1 && (flags & LOADURL_NEW_TAB) != 0) {
+            Tab selectedTab = getSelectedTab();
+            if (selectedTab != null) {
+                parentId = selectedTab.getId();
+            }
+        }
 
         try {
             boolean isPrivate = (flags & LOADURL_PRIVATE) != 0;
